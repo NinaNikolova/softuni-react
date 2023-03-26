@@ -1,0 +1,20 @@
+.slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.slider button {
+  font-size: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.slider img {
+  max-width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+  margin: 0 20px;
+}

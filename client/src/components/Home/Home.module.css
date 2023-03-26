@@ -1,0 +1,35 @@
+#home {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+   height: 100vh;
+  }
+  
+
+  
+  #landing-text {
+    font-style: normal !important;
+    margin-top: 25px;
+    font-weight: bold;
+    font-size: 25px;
+   
+  }
+  #home #landing-text a{
+    text-decoration: none;
+    color:orange;
+     text-decoration: none;
+     padding: 10px;
+     border-radius: 5px;
+     box-shadow: 3px 3px 3px #CBF6FF;
+  }
+
+  #home #landing-text a:hover {
+    color: red;
+ 
+  }
+  
+  
+
+ 

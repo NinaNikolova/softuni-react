@@ -1,0 +1,114 @@
+#root #main #details {
+  display: flex;
+   justify-content: center;
+   flex-direction: column;
+  text-align: center;
+  margin: 20px;
+  padding: 20px;
+}
+#root #main #details .details-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: white;
+    margin: 20px;
+  padding: 20px;
+    max-height: 400px;
+    min-width: 300;
+    max-width: 80%;
+    border: 2px ridge rgb(210, 208, 208);
+    border-radius: 10px;
+      box-shadow: 10px 10px rgba(0, 0, 0, .15);
+  }
+  
+  #root #main #details .details-wrapper .img-wrapper {
+    max-width: 90%;
+    min-width: 300px;
+  
+  }
+  
+ #root #main #details .details-wrapper.img-wrapper img {
+    width: 100%;
+   height: 100%;
+   object-fit: contain;
+    
+    display: inline-block;
+    border-radius: 10px;
+  }
+ 
+  
+  #root #main #details .info-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    margin-left: 30px;
+    height: auto;
+  }
+  
+  #root #main #details .info-wrapper > p {
+    width: 100%;
+  
+    height: auto;
+    text-align: justify;
+  
+  }
+  
+  
+  h2 {
+    padding-top: 26px;
+    text-align: center;
+    color:green;
+  
+  }
+  
+  p {
+    text-align: center;
+    font-size: 19px;
+  }
+  
+  span {
+    font-size: 17px;
+  }
+  
+  #root #main #details .likes{
+    width: 95%;
+    text-align: center;
+    margin: 35px 0px 20px 0px;
+    font-weight: bold;
+    font-size: 19px;
+    color: green;
+  }
+  
+  #root #main #details .action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 35px;
+    margin-bottom: 25px;
+  }
+  
+  #root #main #details .action-buttons a,  #root #main #details .action-buttons button {
+    text-decoration: none;
+    margin: auto 50px;
+    font-size: 14px;
+    width: 140px;
+    padding: 10px;
+    text-align: center;
+  
+    font-weight: 500;
+    background: lightgreen;
+    border-radius: 5px;
+    border:none;
+    
+  }
+  
+  #root #main #details .action-buttons a:hover,  #root #main #details .action-buttons button:hover {
+    transform: rotateX(15deg);
+    box-shadow: 0 15px 15px #7db9d7;
+  }
+  #root #main #details .details-comments{
+    border: 1px solid green;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+  }

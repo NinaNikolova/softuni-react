@@ -1,0 +1,59 @@
+@import url("https://unpkg.com/@fortawesome/fontawesome-free@6.3.0/css/all.min.css");
+@import "dashboard.css";
+@import "form.css";
+@import "animation.css";
+
+
+
+#main, #home{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+      overflow: auto;
+    font-style: italic;
+}
+#main h2, #main h3 {
+    padding-top: 26px;
+    text-align: center;
+    color:green;
+    font-style: italic;
+  
+  }
+  #main h1 {
+    font-style: italic;
+    font-size: 30px;
+    color: green;
+    text-align: center;
+    margin-block: 30px;
+  }
+  
+ 
+  #root p {
+    text-align: center;
+    
+    font-size: 19px;
+  }
+  
+  #root span {
+    font-size: 17px;
+  }
+
+  eader a {
+    padding: 15px;
+    text-decoration: none;
+    color: orange;
+    box-shadow: 3px 3px 3px #CBF6FF;
+}
+#main a {
+    font-size: 1.1rem;
+    background-color: lightgreen;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px #CBF6FF;
+    cursor: pointer;
+}
+
+
+
+  
