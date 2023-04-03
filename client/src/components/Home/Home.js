@@ -1,10 +1,7 @@
 import './Home.module.css'
-import { NavLink } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
+import UncontrolledExample from './Slider/Slider';
 
-
-
-import UncontrolledExample, { Slider } from './Slider/Slider';
 export const Home = ({
   stories
 }) => {

@@ -13,7 +13,7 @@ import * as storyService from './services/storyService';
 
 import { Home } from './components/Home/Home';
 import { Catalog } from './components/Catalog/Catalog';
-import { Header } from './components/Header/Nav';
+import { MyNavbar } from './components/Header/Nav';
 
 import { Footer } from './components/Footer/Footer';
 import { Login } from './components/Login/Login';
@@ -70,7 +70,7 @@ function App() {
     return (
         <AuthProvider>
 
-                <Header />
+                <MyNavbar />
 
              
                 <StoriesContext.Provider value={{ stories, storyAdd, storyEdit, storyDelete }}>
