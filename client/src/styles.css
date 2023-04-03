@@ -22,3 +22,9 @@ h2, h1 {
   span {
     font-size: 17px;
   }
+  ul{
+    list-style-type: none;
+  }
+  a{
+    text-decoration: none;
+  }

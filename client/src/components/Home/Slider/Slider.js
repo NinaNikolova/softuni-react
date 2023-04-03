@@ -1,6 +1,3 @@
-import { StoriesContext } from "../../../contexts/StoriesContext";
-import { useContext, useState } from "react";
-import Button from 'react-bootstrap/Button';
 import Carousel from 'react-bootstrap/Carousel';
 
 
@@ -11,9 +8,9 @@ function UncontrolledExample({
 }) {
 
   return (
-<Carousel>
+<Carousel style={{marginBlock: '30px'}}>
       {stories.map(item => (
-        <Carousel.Item key={item._d}>
+        <Carousel.Item style={{ height: '50vh' }} key={item._id}>
           <img
             className="d-block w-100"
             src={item.img}

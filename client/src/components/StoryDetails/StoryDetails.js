@@ -66,10 +66,11 @@ export const StoryDetails = () => {
                 <h2 className="details-title">{story.title}</h2>
                 <Figure>
       <Figure.Image
-        min-width={'300px'}
-        min-height={'auto'}
+        min-width={'100%'}
+        min-height={'100%'}
         alt={story.title}
         src={story.img}
+        object-fit={'cover'}
       />
     
     </Figure>

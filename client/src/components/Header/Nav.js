@@ -24,19 +24,19 @@ export const Header = () => {
                         alt="logo"
                         src={logo}
                     />
-                    <Figure.Caption >
+                    <Figure.Caption style={{color:'green', fontStyle: 'italic'}}>
                         У нас и по света с деца
                     </Figure.Caption>
                 </Figure>
                 </NavLink>
                 <Navbar.Toggle  aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav  variant="pills" >
+                    <Nav  variant="tabs" defaultActiveKey="/home" >
                         <Nav.Link  href="/">Начало <i className="fa-solid fa-person-hiking"></i></Nav.Link>
                         <Nav.Link href="/catalog">Разкази <i className="fa-solid fa-book-open-reader"></i></Nav.Link>
                         {isAuthenticated === true ?
                             <>
-                                <Nav.Link href="/create">Създай <i className="fa-solid fa-pen"></i></Nav.Link>
+                               <Nav.Link href="/create">Създай <i className="fa-solid fa-pen"></i></Nav.Link>
                                 <Nav.Link href="/logout">Излез <i className="fa-solid fa-right-from-bracket"></i></Nav.Link>
                                 <Nav.Link href="/todos">TODO <i className="fa-solid fa-list"></i></Nav.Link>
                             </>
