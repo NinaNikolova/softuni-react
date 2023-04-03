@@ -1,45 +1,61 @@
-import './Header.module.css'
 import { useContext } from 'react'
 import { NavLink } from 'react-router-dom'
-import logo from './logo.jfif'
+import logo from "./logo.jfif";
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import Figure from 'react-bootstrap/Figure';
+
 
 import { AuthContext } from '../../contexts/AuthContext'
 
-export const Nav = () => {
+export const Header = () => {
     const { isAuthenticated, email } = useContext(AuthContext)
-   
+
     return (
 
-        <>
-            <header>
+        <Navbar bg="ligth" expand="xxl">
 
-                <NavLink style={({ isActive }) => ({ background: isActive && '#dddd95' })} to="/"> <div id="logo"><img src={logo} alt="logo" /><div className="text">У нас и по света с деца </div></div></NavLink>
-                <nav>
+            <Container fluid>
+                <NavLink to="/"> <Figure>
+                    <Figure.Image
+                        width={160}
+                        height={80}
+                        alt="logo"
+                        src={logo}
+                    />
+                    <Figure.Caption >
+                        У нас и по света с деца
+                    </Figure.Caption>
+                </Figure>
+                </NavLink>
+                <Navbar.Toggle  aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav  variant="pills" >
+                        <Nav.Link  href="/">Начало <i className="fa-solid fa-person-hiking"></i></Nav.Link>
+                        <Nav.Link href="/catalog">Разкази <i className="fa-solid fa-book-open-reader"></i></Nav.Link>
+                        {isAuthenticated === true ?
+                            <>
+                                <Nav.Link href="/create">Създай <i className="fa-solid fa-pen"></i></Nav.Link>
+                                <Nav.Link href="/logout">Излез <i className="fa-solid fa-right-from-bracket"></i></Nav.Link>
+                                <Nav.Link href="/todos">TODO <i className="fa-solid fa-list"></i></Nav.Link>
+                            </>
+                            :
+                            <>
+                                <Nav.Link href="/login">Влез <i className="fa-solid fa-right-to-bracket"></i></Nav.Link>
+                                <Nav.Link href="/register">Регистрирай се <i className="fa-solid fa-address-book"></i></Nav.Link>
+                            </>
+                        }
+                    </Nav>
+
+                </Navbar.Collapse>
+
+            </Container>
+            {isAuthenticated === true && (<span style={{ color: 'green', fontSize: '16px' }}>Здравей, {email}</span>)}
+        </Navbar>
 
 
-                    <NavLink style={({ isActive }) => ({ background: isActive ? '#dddd95' : 'green' })} to="/">Начало <i className="fa-solid fa-person-hiking"></i></NavLink>
-                    <NavLink style={({ isActive }) => ({ background: isActive ? '#dddd95' : 'green' })} to="/catalog">Разкази <i className="fa-solid fa-book-open-reader"></i></NavLink>
 
-                    {isAuthenticated===true ? (
-                        <>
-                            <NavLink className="user" style={({ isActive }) => ({ background: isActive ? '#dddd95' : 'green' })} to="/create">Създай разказ <i className="fa-solid fa-pen"></i></NavLink>
 
-                            <NavLink className="user" style={({ isActive }) => ({ background: isActive ? '#dddd95' : 'green' })} to="/todos">TODO <i className="fa-solid fa-list"></i></NavLink>
-                            <NavLink className="user" style={({ isActive }) => ({ background: isActive ? '#dddd95' : 'green' })} to="/logout">Излез <i className="fa-solid fa-right-from-bracket"></i></NavLink>
-
-                        </>
-                    ) : (
-                        <>
-                            <NavLink className="guest" style={({ isActive }) => ({ background: isActive ? '#dddd95' : 'green' })} to="/login">Влез <i className="fa-solid fa-right-to-bracket"></i></NavLink>
-
-                            <NavLink className="guest" style={({ isActive }) => ({ background: isActive ? '#dddd95' : 'green' })} to="/register">Регистрирай се <i className="fa-solid fa-address-book"></i></NavLink>
-                            <NavLink className="guest" style={({ isActive }) => ({ background: isActive ? '#dddd95' : 'green' })} to="/users">Автори <i className="fa-solid fa-users"></i></NavLink>
-                        </>
-                    )}
-                </nav>
-                {isAuthenticated===true && (<span style={{color: 'green', fontSize: '20px'}}>Здравей, {email}</span>)}
-            </header>
-
-        </>
     )
 }

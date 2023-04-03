@@ -1,4 +1,7 @@
+import './animation.css';
+import './form.css'
 import { useForm } from "../../hooks/useForm";
+
 
 export const Create = ({
   onCreateStorySubmit

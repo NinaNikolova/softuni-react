@@ -1,31 +1,32 @@
 import { StoriesContext } from "../../../contexts/StoriesContext";
 import { useContext, useState } from "react";
-export const Slider = () => {
-  const { stories } = useContext(StoriesContext)
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const images = stories.map(x => x.img)
+import Button from 'react-bootstrap/Button';
+import Carousel from 'react-bootstrap/Carousel';
 
-  const prevSlide = () => {
-    const index = currentSlide === 0 ? images.length - 1 : currentSlide - 1;
-    setCurrentSlide(index);
-  };
 
-  const nextSlide = () => {
-    const index = currentSlide === images.length - 1 ? 0 : currentSlide + 1;
-    setCurrentSlide(index);
-  };
+
+
+function UncontrolledExample({
+    stories
+}) {
 
   return (
-    <div id="slider">
-
-<button onClick={prevSlide}>Преди</button>
-<div>
-        <img src={images[currentSlide]} alt={`Slide ${currentSlide}`} />
-    </div>
-          <button onClick={nextSlide}>След</button>
-    </div>
-
-
-
-  )
+<Carousel>
+      {stories.map(item => (
+        <Carousel.Item key={item._d}>
+          <img
+            className="d-block w-100"
+            src={item.img}
+            alt={item.title}
+          />
+          <Carousel.Caption>
+            <p>{item.title}</p>
+           
+          </Carousel.Caption>
+        </Carousel.Item>
+      ))}
+    </Carousel>
+  );
 }
+
+export default UncontrolledExample;

@@ -1,3 +1,4 @@
+import './dashboard.css';
 import { Story } from "./Story/Story"
 
 

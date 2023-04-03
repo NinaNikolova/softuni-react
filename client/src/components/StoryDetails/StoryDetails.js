@@ -1,6 +1,8 @@
 import './StoryDetails.module.css'
 import { useEffect, useContext, useReducer } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
+import Button from 'react-bootstrap/Button';
+import Figure from 'react-bootstrap/Figure';
 
 import * as storyService from '../../services/storyService';
 import { useAuthContext } from "../../contexts/AuthContext";
@@ -9,6 +11,8 @@ import * as commentService from '../../services/commentService';
 import { storyReducer } from '../../reducers/storyReducer';
 
 import { AddComment } from "./AddComment/AddComment";
+
+
 
 
 
@@ -60,9 +64,17 @@ export const StoryDetails = () => {
             <div className="details-wrapper">
 
                 <h2 className="details-title">{story.title}</h2>
-                <div className="img-wrapper">
-                    <img src={story.img} alt="example1" />
-                </div>
+                <Figure>
+      <Figure.Image
+        min-width={'300px'}
+        min-height={'auto'}
+        alt={story.title}
+        src={story.img}
+      />
+    
+    </Figure>
+
+               
                 <div className="info-wrapper">
                     <p><strong>E-mail: </strong><span id="details-singer">{story._ownerId}</span></p>
 
@@ -76,8 +88,9 @@ export const StoryDetails = () => {
 
                 {story._ownerId === userId ?
                     <div className="action-buttons">
-                        <Link to={`/catalog/${storyId}/edit`} className="edit-btn">Редактирай <i className="fa-solid fa-file-pen"></i></Link>
-                        <button onClick={onDeleteClick}>Изтрий <i className="fa-solid fa-trash-can"></i></button>
+                        <Button href={`/catalog/${storyId}/edit`} variant="warning">Редактирай <i className="fa-solid fa-file-pen"></i></Button>{' '}
+                        <Button onClick={onDeleteClick} variant="danger">Изтрий <i className="fa-solid fa-trash-can"></i></Button>{' '}
+                       
                     </div>
                     :
                     <div id="action-buttons">

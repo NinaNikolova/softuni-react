@@ -54,21 +54,7 @@
   }
   
   
-  h2 {
-    padding-top: 26px;
-    text-align: center;
-    color:green;
   
-  }
-  
-  p {
-    text-align: center;
-    font-size: 19px;
-  }
-  
-  span {
-    font-size: 17px;
-  }
   
   #root #main #details .likes{
     width: 95%;

@@ -1,6 +1,7 @@
 #dashboard {
     margin-top: 50px;
     display: inline-block;
+ 
 }
 
 
@@ -8,13 +9,14 @@
     margin: auto;
     height: 290px;
     width: 70%;
-    padding: 30px;
+    padding: 10px;
 }
 
 #dashboard .card-wrapper {
     list-style-type: none;
     display: flex;
     flex-wrap: wrap;
+   
 }
 
 #dashboard .card-wrapper h2 {
@@ -30,10 +32,10 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-      min-width: 350px;
+      min-width: 280px;
     max-width: 23%;
   
-    height: 750px;
+    min-height: 750px;
     margin: 25px auto;
     background-color: white;
     border-radius: 10px;
@@ -91,9 +93,7 @@
     color: green;
 }
 
-#main #dashboard .card p strong {
-    float: left;
-}
+
 
 #dashboard .card p span {
     /* float: right; */

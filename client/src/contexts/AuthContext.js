@@ -20,11 +20,9 @@ export const AuthProvider = ({
         if (rePass !== registerData.password) {
             return;
         }
-
         try {
             const result = await authService.register(registerData)
             setAuth(result);
-
             navigate('/catalog')
         } catch (error) {
             console.log('There is problem')

@@ -1,34 +1,41 @@
-#home {
-    margin-top: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-   height: 100vh;
-  }
+#root #main #home {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+
+}
+#root #home img {
+  display: block;
+  margin: auto;
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  margin-block: 10px;
+}
+
+
+
+
+#home h1 {
+  font-style: italic;
+  font-size: 30px;
+  color: green;
+  text-align: center;
+}
+
+#home h2,
+#home h3 {
+  font-style: italic;
+  font-size: 27px;
+  color: rgb(68, 67, 67);
+  text-align: center;
+}
+
   
 
   
-  #landing-text {
-    font-style: normal !important;
-    margin-top: 25px;
-    font-weight: bold;
-    font-size: 25px;
-   
-  }
-  #home #landing-text a{
-    text-decoration: none;
-    color:orange;
-     text-decoration: none;
-     padding: 10px;
-     border-radius: 5px;
-     box-shadow: 3px 3px 3px #CBF6FF;
-  }
-
-  #home #landing-text a:hover {
-    color: red;
- 
-  }
+  
   
   
 

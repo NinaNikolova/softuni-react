@@ -1,4 +1,7 @@
 import React from 'react';
+import './styles.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import { Route, Routes, useNavigate } from 'react-router-dom';
 
 import { useEffect, useState } from 'react';
@@ -10,9 +13,8 @@ import * as storyService from './services/storyService';
 
 import { Home } from './components/Home/Home';
 import { Catalog } from './components/Catalog/Catalog';
-import { Nav } from './components/Header/Nav';
-// import { Users } from './components/Users/Users';
-// import { User } from './components/Users/User';
+import { Header } from './components/Header/Nav';
+
 import { Footer } from './components/Footer/Footer';
 import { Login } from './components/Login/Login';
 import { Register } from './components/Register/Register';
@@ -20,6 +22,7 @@ import { Create } from './components/Create/Create';
 import { StoryDetails } from './components/StoryDetails/StoryDetails';
 import { Logout } from './components/Logout/Logout';
 import { EditStory } from './components/EditStory/EditStory'
+
 
 
 
@@ -67,19 +70,18 @@ function App() {
     return (
         <AuthProvider>
 
-            <div id="root">
-                <Nav />
+                <Header />
+
+             
                 <StoriesContext.Provider value={{ stories, storyAdd, storyEdit, storyDelete }}>
                     <main id="main">
 
                         <Routes>
-                            <Route path='/' element={<Home />} />
+                            <Route path='/' element={<Home stories={stories} />} />
                             <Route path='/create' element={<Create onCreateStorySubmit={onCreateStorySubmit} />} />
                             <Route path='/catalog' element={<Catalog stories={stories} />} />
                             <Route path='/catalog/:storyId' element={<StoryDetails />} />
                             <Route path='/catalog/:storyId/edit' element={<EditStory />} />
-                            {/* <Route path='/users' element={<Users />} />
-                            <Route path='/users/:userId/*' element={<User />} /> */}
                             <Route path='/login' element={<Login />} />
                             <Route path='/logout' element={<Logout />} />
                             <Route path='/register' element={<Register />} />
@@ -90,7 +92,7 @@ function App() {
                     </main>
                 </StoriesContext.Provider>
                 <Footer />
-            </div>
+ 
 
         </AuthProvider>
     );

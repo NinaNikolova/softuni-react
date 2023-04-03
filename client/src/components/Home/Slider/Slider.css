@@ -1,20 +1,21 @@
-.slider {
+#home #slider {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 50px;
+}
+#slider div{
+  display: flex;
+  min-width: 300px;
+  min-height: auto;
+  padding: 10px;
+
 }
 
-.slider button {
-  font-size: 24px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-}
 
-.slider img {
+#slider img {
   max-width: 100%;
-  max-height: 500px;
+  max-height: 100%;
   object-fit: contain;
   margin: 0 20px;
 }

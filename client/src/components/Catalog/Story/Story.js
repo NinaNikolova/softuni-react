@@ -20,7 +20,7 @@ export const Story = ({
                 <strong>Заглавие: </strong><span className="album">{title}</span>
             </p>
             <p><strong>Описание:</strong><span className="sales">{description.slice(0, description.indexOf('. '))}...</span></p>
-            <Link to={`/catalog/${_id}`} className="details-btn" >Прочети статията...</Link>
+            <Link to={`/catalog/${_id}`} className="details-btn" >Прочети...</Link>
         </li>
     )
 }
