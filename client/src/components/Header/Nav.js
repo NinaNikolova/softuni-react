@@ -14,6 +14,11 @@ import { AuthContext } from '../../contexts/AuthContext'
 export const MyNavbar = () => {
     const { isAuthenticated, email } = useContext(AuthContext)
     const location = useLocation();
+    const activeStyle = {
+        backgroundColor: 'lightgray',
+        color: 'green',
+        border: '1px solid green'
+      };
 
     return (
 
@@ -34,21 +39,21 @@ export const MyNavbar = () => {
                 </NavLink>
                 <Navbar.Toggle  aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav  variant="tabs"  >
+                    <Nav variant="pills" >
                     <Nav.Item>
-                        <Nav.Link style={{ color: 'green' }} as={Link} to="/" active={location.pathname === '/'} >Начало <i className="fa-solid fa-person-hiking"></i></Nav.Link>
+                        <Nav.Link style={location.pathname === '/' ? activeStyle : {}} as={Link} to="/" active={location.pathname === '/'} >Начало <i className="fa-solid fa-person-hiking"></i></Nav.Link>
                         </Nav.Item>
-                        <Nav.Link style={{ color: 'green' }}  as={Link} to="/catalog" active={location.pathname === '/catalog'} >Разкази <i className="fa-solid fa-book-open-reader"></i></Nav.Link>
+                        <Nav.Link style={location.pathname === '/catalog' ? activeStyle : {}}  as={Link} to="/catalog" active={location.pathname === '/catalog'} >Разкази <i className="fa-solid fa-book-open-reader"></i></Nav.Link>
                         {isAuthenticated === true ?
                             <>
-                               <Nav.Link style={{ color: 'green' }}  as={Link} to="/create" active={location.pathname === '/create'} >Създай <i className="fa-solid fa-pen"></i></Nav.Link>
-                                <Nav.Link style={{ color: 'green' }}  as={Link} to="/logout" active={location.pathname === '/logout'} >Излез <i className="fa-solid fa-right-from-bracket"></i></Nav.Link>
-                                <Nav.Link style={{ color: 'green' }}  as={Link} to="/todos" active={location.pathname === '/todos'} >TODO <i className="fa-solid fa-list"></i></Nav.Link>
+                               <Nav.Link style={location.pathname === '/create' ? activeStyle : {}}  as={Link} to="/create" active={location.pathname === '/create'} >Създай <i className="fa-solid fa-pen"></i></Nav.Link>
+                                <Nav.Link style={location.pathname === '/logout' ? activeStyle : {}}  as={Link} to="/logout" active={location.pathname === '/logout'} >Излез <i className="fa-solid fa-right-from-bracket"></i></Nav.Link>
+                                <Nav.Link style={location.pathname === '/todos' ? activeStyle : {}}  as={Link} to="/todos" active={location.pathname === '/todos'} >TODO <i className="fa-solid fa-list"></i></Nav.Link>
                             </>
                             :
                             <>
-                                <Nav.Link style={{ color: 'green' }}  as={Link} to="/login" active={location.pathname === '/login'}>Влез <i className="fa-solid fa-right-to-bracket"></i></Nav.Link>
-                                <Nav.Link style={{ color: 'green' }}  as={Link} to="/register" active={location.pathname === '/register'}>Регистрирай се <i className="fa-solid fa-address-book"></i></Nav.Link>
+                                <Nav.Link style={location.pathname === '/login' ? activeStyle : {}}  as={Link} to="/login" active={location.pathname === '/login'}>Влез <i className="fa-solid fa-right-to-bracket"></i></Nav.Link>
+                                <Nav.Link style={location.pathname === '/register' ? activeStyle : {}}  as={Link} to="/register" active={location.pathname === '/register'}>Регистрирай се <i className="fa-solid fa-address-book"></i></Nav.Link>
                             </>
                         }
                     </Nav>
