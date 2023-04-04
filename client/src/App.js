@@ -13,7 +13,7 @@ import * as storyService from './services/storyService';
 
 import { Home } from './components/Home/Home';
 import { Catalog } from './components/Catalog/Catalog';
-import {  MyNavbar } from './components/Header/Nav';
+import { MyNavbar } from './components/Header/Nav';
 
 import { Footer } from './components/Footer/Footer';
 import { Login } from './components/Login/Login';
@@ -21,17 +21,15 @@ import { Register } from './components/Register/Register';
 import { Create } from './components/Create/Create';
 import { StoryDetails } from './components/StoryDetails/StoryDetails';
 import { Logout } from './components/Logout/Logout';
-import { EditStory } from './components/EditStory/EditStory'
-
-
-
+import { EditStory } from './components/EditStory/EditStory';
+import { RouteGuard } from './components/common/RouteGuard';
 
 
 
 
 function App() {
     const [stories, setStories] = useState([])
-   
+
     const navigate = useNavigate()
 
     const onCreateStorySubmit = async (data) => {
@@ -41,7 +39,7 @@ function App() {
         // TODO: redirect to catalog
         navigate('/catalog')
     }
-   
+
     const storyAdd = (storyData) => {
         setStories(state => [
             ...state,
@@ -53,64 +51,60 @@ function App() {
 
     const storyEdit = (storyId, storyData) => {
         setStories(state => state.map(x => x._id === storyId ? storyData : x));
-    
+
     }
     const storyDelete = (storyId) => {
         setStories(state => state.filter(x => x._id !== storyId));
         navigate('/catalog');
     }
 
-
-
-    // useEffect(() => {
-    //     storyService.getAll().then(data => {
-    //         setStories(data)
-
-    //     })
-    // }, [])
     useEffect(() => {
         storyService.getAll().then((data) => {
-          Promise.all(
-            data.map((x) =>
-              storyService.getEmail(x._ownerId).then((res) => ({...x, email: res[0].author.email}))
-            )
-          ).then((stories) => {
-            setStories(stories);
-          });
+            Promise.all(
+                data.map((x) =>
+                    storyService.getEmail(x._ownerId).then((res) => ({ ...x, email: res[0].author.email }))
+                )
+            ).then((stories) => {
+                setStories(stories);
+            });
         });
-      }, []);
-  
- 
+    }, []);
+
+
 
 
     return (
+
         <AuthProvider>
 
-                <MyNavbar />
+            <MyNavbar />
 
-             
-                <StoriesContext.Provider value={{ stories, storyAdd, storyEdit, storyDelete }}>
-                    <main id="main">
 
-                        <Routes>
-                            <Route path='/' element={<Home stories={stories} />} />
+            <StoriesContext.Provider value={{ stories, storyAdd, storyEdit, storyDelete }}>
+                <main id="main">
+
+                    <Routes>
+                        <Route path='/' element={<Home stories={stories} />} />
+                        <Route path='/catalog' element={<Catalog stories={stories} />} />
+                        <Route path='/catalog/:storyId' element={<StoryDetails stories={stories} />} />
+                        <Route element={<RouteGuard />}>
                             <Route path='/create' element={<Create onCreateStorySubmit={onCreateStorySubmit} />} />
-                            <Route path='/catalog' element={<Catalog stories={stories} />} />
-                            <Route path='/catalog/:storyId' element={<StoryDetails stories={stories} />} />
-                            <Route path='/catalog/:storyId/edit' element={<EditStory />} />
-                            <Route path='/login' element={<Login />} />
-                            <Route path='/logout' element={<Logout />} />
-                            <Route path='/register' element={<Register />} />
-                            <Route path='*' element={<h1>404</h1>} />
+                             <Route path='/catalog/:storyId/edit' element={<EditStory />} />
+                        </Route>
+                        <Route path='/login' element={<Login />} />
+                        <Route path='/logout' element={<Logout />} />
+                        <Route path='/register' element={<Register />} />
+                        <Route path='*' element={<h1>404</h1>} />
 
-                        </Routes>
+                    </Routes>
 
-                    </main>
-                </StoriesContext.Provider>
-                <Footer />
- 
+                </main>
+            </StoriesContext.Provider>
+            <Footer />
+
 
         </AuthProvider>
+
     );
 }
 

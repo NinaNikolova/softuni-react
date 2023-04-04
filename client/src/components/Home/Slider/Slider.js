@@ -10,7 +10,7 @@ function UncontrolledExample({
   return (
 <Carousel style={{marginBlock: '30px'}}>
       {stories.map(item => (
-        <Carousel.Item style={{ height: '50vh' }} key={item._id}>
+        <Carousel.Item style={{ maxHeight: '600px' }} key={item._id}>
           <img
             className="d-block w-100"
             src={item.img}

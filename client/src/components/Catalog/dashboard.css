@@ -7,8 +7,8 @@
 
 #dashboard .card img {
     margin: auto;
-    height: 290px;
-    width: 70%;
+    height: 200px;
+    width: auto;
     padding: 10px;
 }
 
@@ -35,8 +35,8 @@
       min-width: 280px;
     max-width: 23%;
   
-    min-height: 750px;
-    margin: 25px auto;
+    min-height: 700px;
+    margin: 10px auto;
     background-color: white;
     border-radius: 10px;
     /* border: 2px ridge yellow; */
@@ -87,7 +87,7 @@
     margin: auto;
     padding: 5px;
     font-size: 14px;
-    max-height: 100px;
+    max-height: 300px;
     max-width: 30%;
     text-align: center;
     color: green;
