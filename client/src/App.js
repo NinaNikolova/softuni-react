@@ -19,6 +19,7 @@ import { StoryDetails } from './components/StoryDetails/StoryDetails';
 import { Logout } from './components/Logout/Logout';
 import { EditStory } from './components/EditStory/EditStory';
 import { RouteGuard } from './components/common/RouteGuard';
+import { StoryOwner } from './components/common/StoryOwner';
 
 
 
@@ -29,10 +30,6 @@ function App() {
     return (
 
         <AuthProvider>
-
-
-
-
             <StoryProvider>
                 <MyNavbar />
                 <main id="main">
@@ -43,7 +40,9 @@ function App() {
                         <Route path='/catalog/:storyId' element={<StoryDetails />} />
                         <Route element={<RouteGuard />}>
                             <Route path='/create' element={<Create />} />
+                            <Route element={<StoryOwner />}>
                             <Route path='/catalog/:storyId/edit' element={<EditStory />} />
+                            </Route>
                             <Route path='/logout' element={<Logout />} />
                         </Route>
                         <Route path='/login' element={<Login />} />

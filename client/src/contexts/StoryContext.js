@@ -7,7 +7,7 @@ export const StoryContext = createContext();
 
 export const StoryProvider = ({
     children
-})=>{
+}) => {
 
     const [stories, setStories] = useState([])
 
@@ -48,21 +48,25 @@ export const StoryProvider = ({
         setStories(state => state.filter(x => x._id !== storyId));
         navigate('/catalog');
     }
-const contextValues = {
-    stories,
-    onCreateStorySubmit,
-    storyEdit,
-    storyAdd,
-    storyDelete
-}
-    return(
+    const getStory = (storyId) => {
+        return stories.find(story => story._id === storyId)
+    }
+    const contextValues = {
+        stories,
+        onCreateStorySubmit,
+        storyEdit,
+        storyAdd,
+        storyDelete,
+        getStory
+    }
+    return (
         <StoryContext.Provider value={contextValues}>
             {children}
         </StoryContext.Provider>
     )
 }
 
-export const useStoryContext = ()=>{
+export const useStoryContext = () => {
     const context = useContext(StoryContext);
     return context;
 }
