@@ -15,7 +15,7 @@ export const MyNavbar = () => {
     const { isAuthenticated, email } = useContext(AuthContext)
     const location = useLocation();
     const activeStyle = {
-        backgroundColor: 'lightgray',
+        backgroundColor: 'rgb(242, 242, 242)',
         color: 'green',
         border: '1px solid green'
       };

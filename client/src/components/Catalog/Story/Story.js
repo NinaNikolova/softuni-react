@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Button from 'react-bootstrap/Button';
+
 
 
 
@@ -8,15 +8,17 @@ export const Story = ({
      title,
     description,
     img,
-    _ownerId
+    _ownerId,
+    email
 }) => {
- 
+   
+
     return (
         
         <li className="card">
             <img src={img} alt="travis" />
             <p>
-                <strong>Автор </strong><span className="singer">{_ownerId}</span>
+                <strong>Автор </strong><span className="singer">{email}</span>
             </p>
             <p>
                 <strong>Заглавие: </strong><span className="album">{title}</span>

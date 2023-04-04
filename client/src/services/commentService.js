@@ -6,11 +6,11 @@ export const getAll = async(storyId) => {
     const relationQuery = encodeURIComponent(`author=_ownerId:users`);
     const result = await request.get(`${url}?where=${searchQuery}&load=${relationQuery}`);
     const comments = Object.values(result);
-   console.log(comments)
+ 
     return comments;
 }
 export const create = async (storyId, content) => {
     const result = await request.post(url, { storyId, content });
-    console.log(result)
+
     return result;
 }

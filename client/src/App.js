@@ -13,7 +13,7 @@ import * as storyService from './services/storyService';
 
 import { Home } from './components/Home/Home';
 import { Catalog } from './components/Catalog/Catalog';
-import { MyNavbar } from './components/Header/Nav';
+import {  MyNavbar } from './components/Header/Nav';
 
 import { Footer } from './components/Footer/Footer';
 import { Login } from './components/Login/Login';
@@ -59,12 +59,28 @@ function App() {
         setStories(state => state.filter(x => x._id !== storyId));
         navigate('/catalog');
     }
-    useEffect(() => {
-        storyService.getAll().then(data => {
-            setStories(data)
 
-        })
-    }, [])
+
+
+    // useEffect(() => {
+    //     storyService.getAll().then(data => {
+    //         setStories(data)
+
+    //     })
+    // }, [])
+    useEffect(() => {
+        storyService.getAll().then((data) => {
+          Promise.all(
+            data.map((x) =>
+              storyService.getEmail(x._ownerId).then((res) => ({...x, email: res[0].author.email}))
+            )
+          ).then((stories) => {
+            setStories(stories);
+          });
+        });
+      }, []);
+  
+ 
 
 
     return (
@@ -80,7 +96,7 @@ function App() {
                             <Route path='/' element={<Home stories={stories} />} />
                             <Route path='/create' element={<Create onCreateStorySubmit={onCreateStorySubmit} />} />
                             <Route path='/catalog' element={<Catalog stories={stories} />} />
-                            <Route path='/catalog/:storyId' element={<StoryDetails />} />
+                            <Route path='/catalog/:storyId' element={<StoryDetails stories={stories} />} />
                             <Route path='/catalog/:storyId/edit' element={<EditStory />} />
                             <Route path='/login' element={<Login />} />
                             <Route path='/logout' element={<Logout />} />

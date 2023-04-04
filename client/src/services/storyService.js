@@ -18,3 +18,5 @@ export const getOne = async (storyId) => {
 export const delStory = (storyId) => request.del(`${url}/${storyId}`);
 
 export const edit =  async (storyId, data) => await request.put(`${url}/${storyId}`, data);
+
+export const getEmail = async (_ownerId) =>await request.get(`http://localhost:3030/data/stories?where=_ownerId%3D%22${_ownerId}%22&load=author%3D_ownerId%3Ausers`)

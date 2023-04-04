@@ -17,12 +17,15 @@ import { AddComment } from "./AddComment/AddComment";
 
 
 
-export const StoryDetails = () => {
+export const StoryDetails = ({
+    stories
+}) => {
     const { userId, isAuthenticated, email } = useAuthContext()
     const { storyDelete } = useContext(StoriesContext)
     const { storyId } = useParams();
     const [story, dispatch] = useReducer(storyReducer, {})
     const navigate = useNavigate()
+  
 
     useEffect(() => {
         Promise.all([
@@ -38,7 +41,7 @@ export const StoryDetails = () => {
 
             })
     }, [storyId]);
-
+  
     const onCommentsSubmit = async (values) => {
         const res = await commentService.create(storyId, values.content)
         dispatch({
@@ -57,6 +60,9 @@ export const StoryDetails = () => {
 
         navigate('/catalog');
     };
+
+    let em = stories.find(x=>x._id===storyId)
+ 
 
     return (
         <section id="details">
@@ -77,7 +83,7 @@ export const StoryDetails = () => {
 
                
                 <div className="info-wrapper">
-                    <p><strong>E-mail: </strong><span id="details-singer">{story._ownerId}</span></p>
+                    <p><strong>E-mail: </strong><span id="details-singer">{em?.email}</span></p>
 
                     <p>{story.description}</p>
 
