@@ -1,12 +1,11 @@
 import Carousel from 'react-bootstrap/Carousel';
+import { useStoryContext } from '../../../contexts/StoryContext';
 
 
 
 
-function UncontrolledExample({
-    stories
-}) {
-
+function UncontrolledExample() {
+  const {stories} =useStoryContext()
   return (
 <Carousel style={{marginBlock: '30px'}}>
       {stories.map(item => (

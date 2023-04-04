@@ -1,11 +1,11 @@
+import { useStoryContext } from '../../contexts/StoryContext';
 import './dashboard.css';
 import { Story } from "./Story/Story";
 
 
 
-export const Catalog = ({
-    stories
-}) => {
+export const Catalog = () => {
+    const { stories} =useStoryContext()
     return (
         <section id="dashboard">
             <h2>Разкази "У нас и по света с деца"</h2>

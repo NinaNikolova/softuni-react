@@ -1,11 +1,12 @@
 import './Home.module.css'
 import Button from 'react-bootstrap/Button';
 import UncontrolledExample from './Slider/Slider';
+import { useStoryContext } from '../../contexts/StoryContext';
 
-export const Home = ({
-  stories
-}) => {
+export const Home = () => {
+    const {stories} =useStoryContext()
   return (
+  
 
     <section id="home">
       <h1>Кратки разкази "У нас и по света с деца"</h1>

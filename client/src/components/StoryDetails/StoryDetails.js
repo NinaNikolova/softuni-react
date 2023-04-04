@@ -1,12 +1,12 @@
 import './StoryDetails.module.css'
-import { useEffect, useContext, useReducer } from "react";
+import { useEffect, useReducer } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import Figure from 'react-bootstrap/Figure';
 
 import * as storyService from '../../services/storyService';
 import { useAuthContext } from "../../contexts/AuthContext";
-import { StoriesContext } from "../../contexts/StoriesContext";
+import { useStoryContext } from '../../contexts/StoryContext';
 import * as commentService from '../../services/commentService';
 import { storyReducer } from '../../reducers/storyReducer';
 
@@ -17,11 +17,10 @@ import { AddComment } from "./AddComment/AddComment";
 
 
 
-export const StoryDetails = ({
-    stories
-}) => {
+
+export const StoryDetails = () => {
+    const {stories, storyDelete} =useStoryContext()
     const { userId, isAuthenticated, email } = useAuthContext()
-    const { storyDelete } = useContext(StoriesContext)
     const { storyId } = useParams();
     const [story, dispatch] = useReducer(storyReducer, {})
     const navigate = useNavigate()

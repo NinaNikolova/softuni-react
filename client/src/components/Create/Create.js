@@ -1,11 +1,11 @@
 import './animation.css';
 import './form.css'
 import { useForm } from "../../hooks/useForm";
+import { useStoryContext } from '../../contexts/StoryContext';
 
 
-export const Create = ({
-  onCreateStorySubmit
-}) => {
+export const Create = () => {
+  const { onCreateStorySubmit} =useStoryContext()
   const {values, changeHandler, onSubmit} = useForm({
     title: "",
     img: "",

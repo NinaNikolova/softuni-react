@@ -2,11 +2,11 @@ import { useContext, useEffect, useState } from "react";
 import { useParams, useNavigate } from 'react-router-dom';
 
 import * as storyService from '../../services/storyService';
-import { StoriesContext} from "../../contexts/StoriesContext";
+import { useStoryContext } from "../../contexts/StoryContext";
 
 export const EditStory = () => {
     const [currentStory, setCurrentStory] = useState({});
-    const{storyEdit}= useContext(StoriesContext);
+    const{storyEdit}= useStoryContext()
     const { storyId } = useParams();
     const navigate = useNavigate();
 
