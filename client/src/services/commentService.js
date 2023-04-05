@@ -1,5 +1,10 @@
 import * as request from './requester';
-const url = 'http://localhost:3030/data/comments';
+
+
+const baseUrl = process.env.NODE_ENV === 'development' 
+    ? 'http://localhost:3030'
+    : 'http://localhost:3030'; // TODO: Add server url when deployed
+const url = `${baseUrl}/data/comments`;
 
 export const getAll = async(storyId) => {
     const searchQuery = encodeURIComponent(`storyId="${storyId}"`);

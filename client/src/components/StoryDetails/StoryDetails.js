@@ -12,19 +12,13 @@ import { storyReducer } from '../../reducers/storyReducer';
 
 import { AddComment } from "./AddComment/AddComment";
 
-
-
-
-
-
-
 export const StoryDetails = () => {
-    const {stories, storyDelete} =useStoryContext()
+    const {storyDelete, stories} = useStoryContext()
     const { userId, isAuthenticated, email } = useAuthContext()
     const { storyId } = useParams();
     const [story, dispatch] = useReducer(storyReducer, {})
     const navigate = useNavigate()
-  
+
 
     useEffect(() => {
         Promise.all([
@@ -40,7 +34,7 @@ export const StoryDetails = () => {
 
             })
     }, [storyId]);
-  
+
     const onCommentsSubmit = async (values) => {
         const res = await commentService.create(storyId, values.content)
         dispatch({
@@ -48,21 +42,23 @@ export const StoryDetails = () => {
             payload: res,
             email: email
         })
-       
+
     }
 
-    const onDeleteClick = () => {
+    const onDeleteClick = async () => {
+        // eslint-disable-next-line no-restricted-globals
+        const choice = confirm(`Сигурни ли сте, че искате да изтиете ${story.title}`);
+        if (choice) {
+            await storyService.delStory(storyId);
 
-        storyService.delStory(storyId);
+            storyDelete(storyId);
 
-        storyDelete(storyId);
+            navigate('/catalog');
+        }
 
-        navigate('/catalog');
     };
 
-    let em = stories.find(x=>x._id===storyId)
- 
-
+    let em = stories.find(x=>x._id===storyId);
     return (
         <section id="details">
 
@@ -70,17 +66,17 @@ export const StoryDetails = () => {
 
                 <h2 className="details-title">{story.title}</h2>
                 <Figure>
-      <Figure.Image
-        min-width={'100%'}
-        min-height={'100%'}
-        alt={story.title}
-        src={story.img}
-        object-fit={'cover'}
-      />
-    
-    </Figure>
+                    <Figure.Image
+                        min-width={'100%'}
+                        min-height={'100%'}
+                        alt={story.title}
+                        src={story.img}
+                        object-fit={'cover'}
+                    />
 
-               
+                </Figure>
+
+
                 <div className="info-wrapper">
                     <p><strong>E-mail: </strong><span id="details-singer">{em?.email}</span></p>
 
@@ -96,7 +92,7 @@ export const StoryDetails = () => {
                     <div className="action-buttons">
                         <Button href={`/catalog/${storyId}/edit`} variant="warning">Редактирай <i className="fa-solid fa-file-pen"></i></Button>{' '}
                         <Button onClick={onDeleteClick} variant="danger">Изтрий <i className="fa-solid fa-trash-can"></i></Button>{' '}
-                       
+
                     </div>
                     :
                     <div id="action-buttons">
