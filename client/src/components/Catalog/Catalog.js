@@ -12,7 +12,7 @@ export const Catalog = () => {
             <ul className="card-wrapper">
                 {stories.map(x => <Story key={x._id} {...x} />)}
             </ul>
-            {stories.legth===0 && <h2>Още няма публикувани разкази...</h2>}
+            {stories.length===0 && <h2>Още няма публикувани разкази...</h2>}
 
         </section>
     )

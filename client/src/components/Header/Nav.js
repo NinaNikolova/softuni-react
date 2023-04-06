@@ -48,12 +48,13 @@ export const MyNavbar = () => {
                             <>
                                <Nav.Link style={location.pathname === '/create' ? activeStyle : {}}  as={Link} to="/create" active={location.pathname === '/create'} >Създай <i className="fa-solid fa-pen"></i></Nav.Link>
                                 <Nav.Link style={location.pathname === '/logout' ? activeStyle : {}}  as={Link} to="/logout" active={location.pathname === '/logout'} >Излез <i className="fa-solid fa-right-from-bracket"></i></Nav.Link>
-                                <Nav.Link style={location.pathname === '/todos' ? activeStyle : {}}  as={Link} to="/todos" active={location.pathname === '/todos'} >TODO <i className="fa-solid fa-list"></i></Nav.Link>
+                                {/* <Nav.Link style={location.pathname === '/todos' ? activeStyle : {}}  as={Link} to="/todos" active={location.pathname === '/todos'} >TODO <i className="fa-solid fa-list"></i></Nav.Link> */}
                             </>
                             :
                             <>
                                 <Nav.Link style={location.pathname === '/login' ? activeStyle : {}}  as={Link} to="/login" active={location.pathname === '/login'}>Влез <i className="fa-solid fa-right-to-bracket"></i></Nav.Link>
                                 <Nav.Link style={location.pathname === '/register' ? activeStyle : {}}  as={Link} to="/register" active={location.pathname === '/register'}>Регистрирай се <i className="fa-solid fa-address-book"></i></Nav.Link>
+                                <Nav.Link style={location.pathname === '/search' ? activeStyle : {}}  as={Link} to="/search" active={location.pathname === '/search'}>Намери <i className="fa-solid fa-magnifying-glass"></i></Nav.Link>
                             </>
                         }
                     </Nav>

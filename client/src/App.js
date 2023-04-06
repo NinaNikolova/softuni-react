@@ -20,6 +20,7 @@ import { Logout } from './components/Logout/Logout';
 import { EditStory } from './components/EditStory/EditStory';
 import { RouteGuard } from './components/common/RouteGuard';
 import { StoryOwner } from './components/common/StoryOwner';
+import {SearchBar } from './components/search/search';
 
 
 
@@ -45,6 +46,7 @@ function App() {
                             </Route>
                             <Route path='/logout' element={<Logout />} />
                         </Route>
+                        <Route path='/search' element={<SearchBar />} />
                         <Route path='/login' element={<Login />} />
 
                         <Route path='/register' element={<Register />} />
