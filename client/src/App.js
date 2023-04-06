@@ -20,7 +20,7 @@ import { Logout } from './components/Logout/Logout';
 import { EditStory } from './components/EditStory/EditStory';
 import { RouteGuard } from './components/common/RouteGuard';
 import { StoryOwner } from './components/common/StoryOwner';
-import {SearchBar } from './components/search/search';
+import {SearchBar } from './components/Search/Search';
 
 
 

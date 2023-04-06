@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
-import './search.css'
+import './Search.css'
 import { useStoryContext } from '../../contexts/StoryContext';
 import { Container, Form, FormControl, Button } from 'react-bootstrap';
+import ListGroup from 'react-bootstrap/ListGroup';
+
+
+import { Item } from './Item';
 import { Story } from '../Catalog/Story/Story';
+
 
 
 export const SearchBar = () => {
@@ -31,10 +36,20 @@ export const SearchBar = () => {
 
             </Container>
 
- <ul className="card-wrapper">
-                    {searchResults.map(x => <Story key={x._id} {...x} />)}
+            <ul className="card-wrapper">
+                    {searchResults.length > 0 && searchResults.map(x => <Story key={x._id} {...x} />)}
                 </ul>
                 {searchResults.length === 0 && <h2>Няма намерени резултати. Опитайте пак!</h2>}
+
+<br />
+<br />
+<h6> Списък на всички интересни идеи "У нас и по света с деца": </h6>
+
+<ListGroup defaultActiveKey="#link1">
+    {stories.map(x=>  <Item key={x._id} {...x}/>)}
+     
+      
+    </ListGroup>
 
         </section>
     );
