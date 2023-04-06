@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './Search.css'
 import { useStoryContext } from '../../contexts/StoryContext';
 import { Container, Form, FormControl, Button } from 'react-bootstrap';
@@ -30,8 +30,9 @@ export const SearchBar = () => {
         <section id="search">
             <Container>
                 <Form inline>
-                    <FormControl type="text" placeholder="Търси по заглавие на български" className="mr-sm-2" onChange={e => setSearchTerm(e.target.value)} />
-                    <Button variant="outline-primary" onClick={handleSearch} >Търси</Button>
+                <h6>Търсене /само на български език по заглавие/:</h6>
+                    <FormControl type="text" placeholder="Търси по заглавие на бълг.ез. !!!" className="mr-sm-2" onChange={e => setSearchTerm(e.target.value)} />
+                    <Button variant="outline-success" onClick={handleSearch} >Търси  <i className="fa-solid fa-magnifying-glass"></i></Button>
                 </Form>
 
             </Container>
@@ -39,13 +40,13 @@ export const SearchBar = () => {
             <ul className="card-wrapper">
                     {searchResults.length > 0 && searchResults.map(x => <Story key={x._id} {...x} />)}
                 </ul>
-                {searchResults.length === 0 && <h2>Няма намерени резултати. Опитайте пак!</h2>}
+                {searchResults.length === 0 && <h6>Няма намерени резултати. Опитайте пак!</h6>}
 
 <br />
 <br />
-<h6> Списък на всички интересни идеи "У нас и по света с деца": </h6>
+<h4> Списък на всички интересни идеи "У нас и по света с деца": </h4>
 
-<ListGroup defaultActiveKey="#link1">
+<ListGroup >
     {stories.map(x=>  <Item key={x._id} {...x}/>)}
      
       

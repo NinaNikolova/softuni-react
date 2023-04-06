@@ -83,22 +83,18 @@ export const StoryDetails = () => {
                     <p>{story.description}</p>
 
                 </div>
-                <div className="likes">Харесвания: <span className="likes-count">0</span></div>
 
                 {/* <!--Edit and Delete are only for creator--> */}
 
 
-                {story._ownerId === userId ?
+                {story._ownerId === userId &&
                     <div className="action-buttons">
                         <Button href={`/catalog/${storyId}/edit`} variant="warning">Редактирай <i className="fa-solid fa-file-pen"></i></Button>{' '}
                         <Button onClick={onDeleteClick} variant="danger">Изтрий <i className="fa-solid fa-trash-can"></i></Button>{' '}
 
-                    </div>
-                    :
-                    <div id="action-buttons">
-                        <Link to="/" className="like-btn" >Харесай <i className="fa-regular fa-thumbs-up"></i></Link>
-                    </div>
-                }
+                    </div>}
+                    
+               
                 <div className="comments">
                     <div className="details-comments">
                         <h6>Коментари:</h6>
