@@ -29,7 +29,7 @@ export const SearchBar = () => {
     return (
         <section id="search">
             <Container>
-                <Form inline>
+                <Form>
                 <h6>Търсене /само на български език по заглавие/:</h6>
                     <FormControl type="text" placeholder="Търси по заглавие на бълг.ез. !!!" className="mr-sm-2" onChange={e => setSearchTerm(e.target.value)} />
                     <Button variant="outline-success" onClick={handleSearch} >Търси  <i className="fa-solid fa-magnifying-glass"></i></Button>
