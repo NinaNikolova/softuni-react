@@ -12,7 +12,7 @@ Thе project's name is `У нас и по света с деца`. Its putpose i
 4. Search page - search section and list section with links to all stories
 5. Login page
 6. Register page
-Dynamic header and static footer for all pages 
+7. Dynamic header and static footer for all pages 
 
 
 ## Available Scripts:
