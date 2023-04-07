@@ -24,9 +24,11 @@ In the project directory `client`, you can run:
 In the server directory `server` you can run:
 ### `node server.js` - to start the SoftUni Practice Server /Softuni/ on http://localhost:3030
 
-## deployment - link of the project only front-end without server:
+## deployment
+link of the project /only front-end without server and database/:
 https://unasiposvetasdeca-7df14.firebaseapp.com/
 
-## The  project use a lot of technologies: React, React-router-dom, JS, HTML, CSS, React-Bootsrap...
+##  Technologies:
+The  project use a lot of technologies: React, React-router-dom, JS, HTML, CSS, React-Bootsrap...
 
 
