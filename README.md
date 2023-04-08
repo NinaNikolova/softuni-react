@@ -34,6 +34,8 @@ link of the project /only front-end without server and database/:
 https://unasiposvetasdeca-7df14.firebaseapp.com/
 
 ##  Technologies:
-The  project use the following technologies technologies: React, React-router-dom, JS, HTML, CSS, React-Bootsrap...
+The  project use the following technologies: React, React-router-dom, JS, HTML, CSS, React-Bootsrap...
 
+## React concepts:
+In the project I have tried to use the React concepts as components, props, state, lifecycle methods, React Router, hooks, custom hooks..
 
