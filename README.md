@@ -20,11 +20,14 @@ Thе project's name is `У нас и по света с деца`. Its putpose i
 ## Available Scripts:
 
 In the project directory `client`, you can run:
-### `npm i` - to install npm npm packages
-### `npm start` - to start the project on http://localhost:3000/
+### `npm i`
+to install npm npm packages
+### `npm start`
+to start the project on http://localhost:3000/
 
 In the server directory `server` you can run:
-### `node server.js` - to start the SoftUni Practice Server /with some initial prepared data / on http://localhost:3030
+### `node server.js`
+to start the SoftUni Practice Server /with some initial prepared data / on http://localhost:3030
 
 ## Deployment
 link of the project /only front-end without server and database/:
