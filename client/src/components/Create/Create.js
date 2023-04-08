@@ -27,7 +27,7 @@ export const Create = () => {
 
         <form className="create-form" method="POST" onSubmit={onSubmit}>
           <input type="text" name="title"  placeholder="Заглавие" value={values.title} onChange={changeHandler} />
-          <input type="text" name="img"  placeholder="Снимка" value={values.img} onChange={changeHandler} />
+          <input type="text" name="img"  placeholder="Снимка с адрес: https://...jpg" value={values.img} onChange={changeHandler} />
           <textarea name="description" id="text" cols="100" rows="40" placeholder="Твоя кратък разказ" value={values.description} onChange={changeHandler} ></textarea>
 
 

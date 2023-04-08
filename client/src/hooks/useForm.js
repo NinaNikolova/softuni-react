@@ -12,10 +12,10 @@ export const useForm = (initialValues, onSubmitHandler) => {
         if(Object.values(values).some(x=>x==='')){
             return alert("Моля, попълнете всички полета!")
         }
+
          onSubmitHandler(values)
           setValues(initialValues)
-        
-      
+
        
     }
     return {
