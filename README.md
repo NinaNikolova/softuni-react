@@ -3,7 +3,6 @@
 ## The idea and  a brief description
 Thе project's name is `У нас и по света с деца`. Its putpose is to provide brief information/stories/ and ideas for outings and trips to families with children in Bulgaria and around the world.
 
-
 ## It contains the following pages:
 
 1. Home page- images-slider and a brief info about project
@@ -16,9 +15,7 @@ Thе project's name is `У нас и по света с деца`. Its putpose i
 8. Register page
 9. Dynamic header and static footer for all pages 
 
-
-## Available Scripts:
-
+## Available Scripts
 In the project directory `client`, you can run:
 ### `npm i`
 to install npm npm packages
@@ -33,9 +30,9 @@ to start the SoftUni Practice Server /with some initial prepared data / on http:
 link of the project /only front-end without server and database/:
 https://unasiposvetasdeca-7df14.firebaseapp.com/
 
-##  Technologies:
+##  Technologies
 The  project use the following technologies: React, React-router-dom, JS, HTML, CSS, React-Bootsrap...
 
-## React concepts:
-In the project I have tried to use the React concepts as components, props, state, lifecycle methods, React Router, hooks, custom hooks..
+## React concepts
+In the project I have tried to use the React concepts: components, props, state, React Router, hooks, custom hooks, Higher-Order Components (HOCs) /route and resource protection/, Context API...
 
