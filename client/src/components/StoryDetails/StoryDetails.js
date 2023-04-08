@@ -19,6 +19,7 @@ export const StoryDetails = () => {
     const [story, dispatch] = useReducer(storyReducer, {})
     const navigate = useNavigate()
 
+  
 
     useEffect(() => {
         Promise.all([
@@ -27,7 +28,7 @@ export const StoryDetails = () => {
         ])
             .then(([storyData, comments]) => {
                 const storyState = {
-                    ...storyData,
+                    ...storyData, 
                     comments
                 }
                 dispatch({ type: 'STORY_FETCH', payload: storyState })
@@ -35,6 +36,7 @@ export const StoryDetails = () => {
             })
     }, [storyId]);
 
+   
     const onCommentsSubmit = async (values) => {
         const res = await commentService.create(storyId, values.content)
         dispatch({
@@ -58,7 +60,8 @@ export const StoryDetails = () => {
 
     };
 
-    let em = stories.find(x=>x._id===storyId);
+let em = stories.find(x=>x._id===storyId);
+
     return (
         <section id="details">
 

@@ -10,6 +10,7 @@ export const AuthProvider = ({
     children,
 }) => {
     const [auth, setAuth] = useLocalStorage('auth', {});
+
     const navigate = useNavigate()
 
     const onLogout = async () => {

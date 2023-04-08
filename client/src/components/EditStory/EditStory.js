@@ -6,7 +6,7 @@ import { useStoryContext } from "../../contexts/StoryContext";
 
 export const EditStory = () => {
     const [currentStory, setCurrentStory] = useState({});
-    const{storyEdit}= useStoryContext()
+    const{storyEdit }= useStoryContext()
     const { storyId } = useParams();
     const navigate = useNavigate();
 
@@ -21,7 +21,9 @@ export const EditStory = () => {
         e.preventDefault();
 
         const storyData = Object.fromEntries(new FormData(e.target));
-
+        if(Object.values(storyData).some(x=>x==='')){
+          return alert("Моля, попълнете всички полета!")
+      }
       storyService.edit(storyId, storyData)
             .then(result => {
                 storyEdit(storyId, result);

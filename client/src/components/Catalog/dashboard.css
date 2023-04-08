@@ -1,7 +1,7 @@
 #dashboard {
     margin-top: 50px;
     display: inline-block;
- 
+
 }
 
 
@@ -16,7 +16,7 @@
     list-style-type: none;
     display: flex;
     flex-wrap: wrap;
-   
+
 }
 
 #dashboard .card-wrapper h2 {
@@ -32,11 +32,11 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-      min-width: 280px;
+    min-width: 280px;
     max-width: 23%;
-  
+
     min-height: 700px;
-    margin: 10px auto;
+    margin: 20px auto;
     background-color: white;
     border-radius: 10px;
     /* border: 2px ridge yellow; */
@@ -100,6 +100,7 @@
     width: 100%;
     text-align: justify;
 }
+
 #dashboard .card span {
     padding: 10px;
     margin: auto;

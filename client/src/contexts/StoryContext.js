@@ -1,6 +1,7 @@
 import { createContext, useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import * as storyService from '../services/storyService';
+
 export const StoryContext = createContext();
 
 
@@ -10,6 +11,7 @@ export const StoryProvider = ({
 }) => {
 
     const [stories, setStories] = useState([])
+
 
     const navigate = useNavigate()
     useEffect(() => {
@@ -25,6 +27,7 @@ export const StoryProvider = ({
     }, []);
     const onCreateStorySubmit = async (data) => {
         const newStory = await storyService.create(data);
+       
         // TODO: add to state
         setStories(state => ([...state, newStory]))
         // TODO: redirect to catalog

@@ -1,5 +1,5 @@
-import './animation.css';
-import './form.css'
+import './Animation.css';
+import './Form.css'
 import { useForm } from "../../hooks/useForm";
 import { useStoryContext } from '../../contexts/StoryContext';
 
@@ -11,8 +11,7 @@ export const Create = () => {
     img: "",
     description: ""
   }, onCreateStorySubmit)
-
-
+ 
   return (
     <section id="create">
       <br />
