@@ -47,11 +47,11 @@ export const StoryDetails = () => {
 
     }
 
-    const onDeleteClick = async () => {
+    const onDeleteClick = () => {
         // eslint-disable-next-line no-restricted-globals
         const choice = confirm(`Сигурни ли сте, че искате да изтиете ${story.title}`);
         if (choice) {
-            await storyService.delStory(storyId);
+            storyService.delStory(storyId);
 
             storyDelete(storyId);
 
