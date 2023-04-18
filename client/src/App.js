@@ -21,6 +21,7 @@ import { EditStory } from './components/EditStory/EditStory';
 import { RouteGuard } from './components/common/RouteGuard';
 import { StoryOwner } from './components/common/StoryOwner';
 import {SearchBar } from './components/Search/Search';
+import { Contact } from './components/Contact/Contact';
 
 
 
@@ -50,6 +51,7 @@ function App() {
                         <Route path='/login' element={<Login />} />
 
                         <Route path='/register' element={<Register />} />
+                        <Route path='/contact' element={<Contact />} />
                         <Route path='*' element={<h1>404</h1>} />
 
                     </Routes>

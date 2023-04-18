@@ -57,6 +57,8 @@ export const MyNavbar = () => {
                                 <Nav.Link style={location.pathname === '/search' ? activeStyle : {}}  as={Link} to="/search" active={location.pathname === '/search'}>Намери <i className="fa-solid fa-magnifying-glass"></i></Nav.Link>
                             </>
                         }
+                                <Nav.Link style={location.pathname === '/contact' ? activeStyle : {}}  as={Link} to="/contact" active={location.pathname === '/contact'}>Контакти <i className="fa-solid fa-magnifying-glass"></i></Nav.Link>
+
                     </Nav>
 
                 </Navbar.Collapse>

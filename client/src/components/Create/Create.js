@@ -2,6 +2,8 @@ import './Animation.css';
 import './Form.css'
 import { useForm } from "../../hooks/useForm";
 import { useStoryContext } from '../../contexts/StoryContext';
+// import { CloudinaryContext, Image } from 'cloudinary-react';
+// import { ImageUploader } from './Image';
 
 
 export const Create = () => {
@@ -33,6 +35,7 @@ export const Create = () => {
 
           <button type="submit">Създай</button>
         </form>
+     
       </div>
 
     </section>
