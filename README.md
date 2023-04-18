@@ -3,6 +3,11 @@
 ## The idea and  a brief description
 Thе project's name is `У нас и по света с деца`. Its putpose is to provide brief information/stories/ and ideas for outings and trips to families with children in Bulgaria and around the world.
 
+## Part of the project is: part of the project is uploaded:
+- the exppres.js server and react.js front-end - Vercel
+- database - MongoDB Atlas
+- you can find the project here: https://unasiposvetasdeca.vercel.app/
+
 ## It contains the following pages:
 
 1. Home page- images-slider and a brief info about project
@@ -29,6 +34,7 @@ to start the SoftUni Practice Server /with some initial prepared data / on http:
 ## Deployment
 link of the project /only front-end without server and database/:
 https://unasiposvetasdeca-7df14.firebaseapp.com/
+The password for registration must contain always `EmI` and  digits and latin letter` more than 6 - it is for security reason, because I want there only my friends to participate who know the way to register.
 
 ##  Technologies
 The  project use the following technologies: React, React-router-dom, JS, HTML, CSS, React-Bootsrap...
