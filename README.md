@@ -6,6 +6,7 @@ Thе project's name is `У нас и по света с деца`. Its putpose i
 ## Part of the project is: part of the project is uploaded:
 - the exppres.js server and react.js front-end - Vercel
 - database - MongoDB Atlas
+- for upload of pictures - Cloudinary
 - you can find the project here: https://unasiposvetasdeca.vercel.app/
 
 ## It contains the following pages:
